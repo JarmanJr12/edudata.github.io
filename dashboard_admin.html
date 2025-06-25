@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDUDATA | Dashboard Nacional</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="admin-dashboard.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard-layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" onmouseenter="expandSidebar()" onmouseleave="collapseSidebar()">
+      <div class="sidebar-header">
+        <i class="fas fa-graduation-cap"></i>
+        <span class="sidebar-title">EDUDATA</span>
+      </div>
+      <ul class="sidebar-menu">
+        <li><i class="fas fa-home"></i> <span>Inicio</span></li>
+        <li><i class="fas fa-map"></i> <span>Regiones</span></li>
+        <li><i class="fas fa-chart-line"></i> <span>Deserción</span></li>
+        <li onclick="window.location.href='admin_instituciones_panel.html'">
+  <i class="fas fa-school"></i> <span>Instituciones</span>
+</li>
+        <li onclick="logout()"><i class="fas fa-sign-out-alt"></i> <span>Salir</span></li>
+      </ul>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <div class="user-info">
+          <span class="user-role">Administrador</span>
+          <span class="user-email">admin@edudata.com</span>
+        </div>
+      </header>
+
+      <section class="cards-grid">
+        <div class="card metric">
+          <h3>Deserción promedio</h3>
+          <p class="big">8.6%</p>
+          <span class="subtext">Nacional - 2024</span>
+        </div>
+        <div class="card metric">
+          <h3>Rendimiento general</h3>
+          <p class="big">3.74</p>
+          <span class="subtext">Promedio país</span>
+        </div>
+        <div class="card metric">
+          <h3>Asistencia promedio</h3>
+          <p class="big">91%</p>
+          <span class="subtext">Últimos 30 días</span>
+        </div>
+        <div class="card metric">
+          <h3>Instituciones activas</h3>
+          <p class="big">1.205</p>
+          <span class="subtext">A nivel nacional</span>
+        </div>
+      </section>
+
+      <section class="charts-grid">
+        <div class="chart-card">
+          <h4>Deserción por región</h4>
+          <canvas id="desercionChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h4>Rendimiento por nivel</h4>
+          <canvas id="rendimientoChart"></canvas>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function logout() {
+      localStorage.clear();
+      window.location.href = 'index.html';
+    }
+
+    // Validación de rol
+    const role = localStorage.getItem("userRole");
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    if (!isLoggedIn || role !== "admin") {
+      window.location.href = "index.html";
+    }
+
+    // Gráficos
+    new Chart(document.getElementById("desercionChart"), {
+      type: 'bar',
+      data: {
+        labels: ["Andina", "Caribe", "Pacífica", "Orinoquía", "Amazonía"],
+        datasets: [{
+          label: "Deserción (%)",
+          data: [10.2, 7.8, 8.1, 9.4, 6.7],
+          backgroundColor: '#ef4444'
+        }]
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        responsive: true,
+        scales: { y: { beginAtZero: true, max: 15 } }
+      }
+    });
+
+    new Chart(document.getElementById("rendimientoChart"), {
+      type: 'line',
+      data: {
+        labels: ["Primaria", "Secundaria", "Media"],
+        datasets: [{
+          label: "Promedio por nivel",
+          data: [3.6, 3.8, 3.7],
+          borderColor: '#2563eb',
+          backgroundColor: 'rgba(37,99,235,0.1)',
+          tension: 0.3,
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, max: 5 } }
+      }
+    });
+  </script>
+</body>
+</html>

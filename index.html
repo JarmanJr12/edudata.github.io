@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDUDATA – Plataforma Analítica Educativa</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal"></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Header profesional -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo-container">
+        <h1 class="logo">EDUDATA</h1>
+        <span class="logo-badge">PRO</span>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+          <li><a href="#eduapoyo" class="nav-link">EduApoyo</a></li>
+          <li><a href="#recursos" class="nav-link">Recursos</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+          <li>
+            <button class="nav-button" onclick="openModal('loginModal')">
+              <i class="fas fa-sign-in-alt"></i> Acceso
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <div class="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section Profesional -->
+  <section id="inicio" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="hero-subtitle">PLATAFORMA ANALÍTICA EDUCATIVA</span>
+          <h1 class="hero-title">Transformación Digital para Instituciones Educativas</h1>
+          <p class="hero-description">Solución integral para el análisis de datos educativos y apoyo especializado para estudiantes con TDAH.</p>
+          <div class="hero-cta">
+            <button class="cta-primary" onclick="openModal('demoModal')">
+              Solicitar Demo <i class="fas fa-arrow-right"></i>
+            </button>
+            <button class="cta-secondary" onclick="scrollToSection('features')">
+              Explorar Características <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="dashboard-preview">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Dashboard EDUDATA" class="dashboard-img">
+            <div class="preview-badge">
+              <i class="fas fa-chart-line"></i> Vista Previa
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">NUESTRAS CARACTERÍSTICAS</span>
+        <h2 class="section-title">Potencia tu Institución Educativa</h2>
+        <p class="section-description">Herramientas diseñadas para la excelencia académica y el apoyo estudiantil</p>
+      </div>
+      
+      <div class="features-grid">
+        <!-- Feature Card 1 -->
+        <div class="feature-card">
+          <div class="feature-icon-container">
+            <i class="feature-icon fas fa-chart-network"></i>
+          </div>
+          <h3 class="feature-title">Analítica Predictiva</h3>
+          <p class="feature-description">Sistema avanzado de machine learning para predecir riesgos de deserción escolar.</p>
+          <button class="feature-button" onclick="openModal('feature1Modal')">
+            Ver más <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+        
+        <!-- Feature Card 2 -->
+        <div class="feature-card">
+          <div class="feature-icon-container">
+            <i class="feature-icon fas fa-brain"></i>
+          </div>
+          <h3 class="feature-title">Módulo TDAH</h3>
+          <p class="feature-description">Herramientas especializadas para estudiantes con trastornos de atención.</p>
+          <button class="feature-button" onclick="openModal('feature2Modal')">
+            Ver más <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+        
+        <!-- Feature Card 3 -->
+        <div class="feature-card">
+          <div class="feature-icon-container">
+            <i class="feature-icon fas fa-user-graduate"></i>
+          </div>
+          <h3 class="feature-title">Seguimiento Individual</h3>
+          <p class="feature-description">Perfiles completos con historial académico y comportamiento.</p>
+          <button class="feature-button" onclick="openModal('feature3Modal')">
+            Ver más <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+        
+        <!-- Feature Card 4 -->
+        <div class="feature-card">
+          <div class="feature-icon-container">
+            <i class="feature-icon fas fa-university"></i>
+          </div>
+          <h3 class="feature-title">Dashboard Institucional</h3>
+          <p class="feature-description">Visualización de datos en tiempo real para toma de decisiones.</p>
+          <button class="feature-button" onclick="openModal('feature4Modal')">
+            Ver más <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EduApoyo Section -->
+  <section id="eduapoyo" class="eduapoyo">
+    <div class="container">
+      <div class="eduapoyo-content">
+        <div class="eduapoyo-image">
+          <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="EduApoyo">
+            <div class="image-badge">NUEVO</div>
+          </div>
+        </div>
+        <div class="eduapoyo-text">
+          <span class="section-subtitle">APOYO ESPECIALIZADO</span>
+          <h2 class="section-title">EduApoyo para TDAH</h2>
+          <p class="section-description">Solución integral para estudiantes con trastornos de atención e hiperactividad.</p>
+          
+          <div class="eduapoyo-features">
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Planificadores académicos interactivos</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Técnicas de estudio validadas</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Ejercicios de concentración</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Seguimiento de progreso</span>
+            </div>
+          </div>
+          
+          <div class="eduapoyo-cta">
+            <button class="cta-primary" onclick="openModal('eduapoyoModal')">
+              Conocer más <i class="fas fa-arrow-right"></i>
+            </button>
+            <button class="cta-secondary" onclick="openModal('demoModal')">
+              Ver demostración <i class="fas fa-play"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visualización Modal (Oculto hasta que se haga click) -->
+  <div id="visualizacionModal" class="modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3>Visualización de Datos Educativos</h3>
+        <button class="modal-close" onclick="closeModal('visualizacionModal')">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="visualizacion-content">
+          <div class="visualizacion-form">
+            <h4>Configurar visualización</h4>
+            <form id="dataForm">
+              <div class="form-group">
+                <label for="dataRegion">Región</label>
+                <select id="dataRegion" class="form-control">
+                  <option value="">Seleccionar región</option>
+                  <option value="andina">Región Andina</option>
+                  <option value="caribe">Región Caribe</option>
+                  <option value="pacifica">Región Pacífica</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="dataLevel">Nivel Educativo</label>
+                <select id="dataLevel" class="form-control">
+                  <option value="">Seleccionar nivel</option>
+                  <option value="primaria">Primaria</option>
+                  <option value="secundaria">Secundaria</option>
+                  <option value="media">Media</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="dataMetric">Métrica a Visualizar</label>
+                <select id="dataMetric" class="form-control">
+                  <option value="desercion">Tasa de deserción</option>
+                  <option value="rendimiento">Rendimiento académico</option>
+                  <option value="asistencia">Asistencia escolar</option>
+                </select>
+              </div>
+              
+              <button type="submit" class="form-button">
+                Generar Visualización <i class="fas fa-chart-bar"></i>
+              </button>
+            </form>
+          </div>
+          
+          <div class="visualizacion-graph">
+            <h4>Resultados</h4>
+            <div class="graph-container">
+              <canvas id="dataChart"></canvas>
+            </div>
+            <div class="graph-actions">
+              <button class="graph-button">
+                <i class="fas fa-download"></i> Exportar
+              </button>
+              <button class="graph-button">
+                <i class="fas fa-share-alt"></i> Compartir
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Otros modales (Demo, Login, etc.) -->
+  <div id="demoModal" class="modal">
+    <!-- Contenido del modal demo -->
+  </div>
+
+<div id="loginModal" class="modal">
+  <div class="modal-container" style="max-width: 420px;">
+    <div class="modal-body" style="padding: 2rem;">
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <i class="fas fa-user-shield" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+        <h3 style="font-size: 1.75rem; font-weight: 700; color: var(--dark-color);">Bienvenido</h3>
+        <p style="color: var(--gray-medium); font-size: 0.95rem;">Accede al panel de administración</p>
+      </div>
+      <form id="loginForm" class="visualizacion-form">
+        <div class="form-group">
+          <label for="username">Correo electrónico</label>
+          <input type="email" id="username" class="form-control" placeholder="ejemplo@correo.com" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="form-button" style="margin-top: 1rem;">
+          Ingresar <i class="fas fa-arrow-right"></i>
+        </button>
+        <p id="loginError" style="display: none; margin-top: 1rem; color: var(--danger-color); font-weight: 500; text-align: center;">
+          Credenciales incorrectas. Intenta de nuevo.
+        </p>
+      </form>
+      <div style="text-align: center; margin-top: 1.5rem;">
+        <button class="cta-secondary" onclick="closeModal('loginModal')">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <footer class="footer">
+    <!-- Footer profesional -->
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
