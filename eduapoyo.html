@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>EduApoyo – Detalles del Módulo</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+        <style>
+            .fullscreen-modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: white;
+                z-index: 5000;
+                padding: 4rem 2rem;
+                overflow-y: auto;
+                display: none;
+                flex-direction: column;
+                animation: fadeIn 0.4s ease;
+            }
+            .fullscreen-modal.active {
+                display: flex;
+            }
+            .modal-close-button {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: var(--gray-dark);
+            }
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="index.html" class="logo-container">
+                    <h1 class="logo">EDUDATA</h1>
+                    <span class="logo-badge">PRO</span>
+                </a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html#inicio" class="nav-link">Inicio</a></li>
+                        <li><a href="index.html#eduapoyo" class="nav-link active">EduApoyo</a></li>
+                        <li><a href="index.html#recursos" class="nav-link">Recursos</a></li>
+                        <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero" style="background: linear-gradient(135deg, #1f2937, #111827);">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content" style="grid-template-columns: 1fr; text-align: center;">
+                    <div class="hero-text">
+                        <span class="hero-subtitle">MÓDULO DESTACADO</span>
+                        <h1 class="hero-title">EduApoyo para TDAH</h1>
+                        <p class="hero-description">Un módulo completo que ofrece planificación, acompañamiento y técnicas validadas para estudiantes con TDAH.</p>
+                        <button class="cta-primary" onclick="openEduModal()">Explorar módulo <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="eduapoyoModal" class="fullscreen-modal">
+            <button class="modal-close-button" onclick="closeEduModal()"><i class="fas fa-times"></i></button>
+            <div class="section-header" style="margin-top: 3rem;">
+                <span class="section-subtitle">FUNCIONALIDADES</span>
+                <h2 class="section-title">¿Qué incluye EduApoyo?</h2>
+                <p class="section-description">Cada herramienta está diseñada para mejorar el rendimiento y la organización de estudiantes con trastornos de atención.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-container">
+                        <i class="feature-icon fas fa-calendar-check"></i>
+                    </div>
+                    <h3 class="feature-title">Planificadores Académicos</h3>
+                    <p class="feature-description">Organiza tareas, clases y recordatorios con vistas semanales personalizables.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-container">
+                        <i class="feature-icon fas fa-book-open"></i>
+                    </div>
+                    <h3 class="feature-title">Técnicas de Estudio</h3>
+                    <p class="feature-description">Métodos visuales, auditivos y prácticos para mejorar la retención y comprensión.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-container">
+                        <i class="feature-icon fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Ejercicios de Concentración</h3>
+                    <p class="feature-description">Minijuegos y ejercicios que estimulan la atención sostenida y la autorregulación.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-container">
+                        <i class="feature-icon fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Seguimiento del Progreso</h3>
+                    <p class="feature-description">Visualiza gráficas de avance y recibe retroalimentación periódica sobre el desempeño.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container" style="text-align: center; padding: 2rem 0;">
+                <p style="color: var(--gray-medium);">&copy; 2025 EDUDATA – Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+        <script>
+            function openEduModal() {
+                document.getElementById("eduapoyoModal").classList.add("active");
+                document.body.style.overflow = "hidden";
+            }
+            function closeEduModal() {
+                document.getElementById("eduapoyoModal").classList.remove("active");
+                document.body.style.overflow = "auto";
+            }
+        </script>
+    </body>
+</html>

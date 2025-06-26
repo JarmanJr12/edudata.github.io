@@ -1,98 +1,727 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EDUDATA | Instituciones</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="admin-dashboard.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-</head>
-<body>
-  <div class="dashboard-layout">
-    <!-- SIDEBAR -->
-    <aside class="sidebar" onmouseenter="expandSidebar()" onmouseleave="collapseSidebar()">
-      <div class="sidebar-header">
-        <i class="fas fa-graduation-cap"></i>
-        <span class="sidebar-title">EDUDATA</span>
-      </div>
-      <ul class="sidebar-menu">
-        <li onclick="window.location.href='dashboard_admin.html'"><i class="fas fa-home"></i> <span>Inicio</span></li>
-        <li class="active"><i class="fas fa-school"></i> <span>Instituciones</span></li>
-        <li onclick="logout()"><i class="fas fa-sign-out-alt"></i> <span>Salir</span></li>
-      </ul>
-    </aside>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>EDUDATA | Instituciones</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="admin-dashboard.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="dashboard-layout">
+            <!-- SIDEBAR -->
+            <aside class="sidebar" onmouseenter="expandSidebar()" onmouseleave="collapseSidebar()">
+                <div class="sidebar-header">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span class="sidebar-title">EDUDATA</span>
+                </div>
+                <ul class="sidebar-menu">
+                    <li onclick="window.location.href='dashboard_admin.html'"><i class="fas fa-home"></i> <span>Inicio</span></li>
+                    <li class="active"><i class="fas fa-school"></i> <span>Instituciones</span></li>
+                    <li onclick="logout()"><i class="fas fa-sign-out-alt"></i> <span>Salir</span></li>
+                </ul>
+            </aside>
 
-    <!-- MAIN -->
-    <main class="dashboard-main">
-      <header class="dashboard-header">
-        <div class="user-info">
-          <span class="user-role">Administrador</span>
-          <span class="user-email">admin@edudata.com</span>
+            <!-- MAIN -->
+            <main class="dashboard-main">
+                <header class="dashboard-header">
+                    <div class="user-info">
+                        <span class="user-role">Administrador</span>
+                        <span class="user-email">admin@edudata.com</span>
+                    </div>
+                </header>
+
+                <section>
+                    <h2 style="margin-bottom: 1rem;">Instituciones Registradas</h2>
+                    <div class="card" style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background-color: #a7abb3;">
+                                    <th style="text-align: left; padding: 0.75rem;">Localidad</th>
+                                    <th style="text-align: left; padding: 0.75rem;">Barrio</th>
+                                    <th style="text-align: left; padding: 0.75rem;">Nombre de Institución</th>
+                                    <th style="text-align: left; padding: 0.75rem;">Correo</th>
+                                    <th style="text-align: left; padding: 0.75rem;">Sector</th>
+                                    <th style="text-align: left; padding: 0.75rem;">Clase</th>
+                                    <th style="text-align: left; padding: 0.75rem;">Estado</th>
+                                    <th style="text-align: left; padding: 0.75rem;">Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">EL VERBENAL 1</td>
+        <td style="padding: 0.75rem;">AQUILEO PARRA</td>
+        <td style="padding: 0.75rem;">aquileo.parra@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">BOSQUE DE PINOS III</td>
+        <td style="padding: 0.75rem;">AGUSTIN FERNANDEZ</td>
+        <td style="padding: 0.75rem;">agustin.fernandez@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">CERROS NORTE</td>
+        <td style="padding: 0.75rem;">SAN BERNARDO</td>
+        <td style="padding: 0.75rem;">san.bernardo@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">SANTA CECILIA PUENTE NORTE</td>
+        <td style="padding: 0.75rem;">SANTA CECILIA ALTA</td>
+        <td style="padding: 0.75rem;">santa.cecilia.alta@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">BARRANCAS NORTE</td>
+        <td style="padding: 0.75rem;">LOS PISINGOS</td>
+        <td style="padding: 0.75rem;">los.pisingos@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">LA GRANJA NORTE</td>
+        <td style="padding: 0.75rem;">FRIEDRICH NAUMANN</td>
+        <td style="padding: 0.75rem;">friedrich.naumann@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">HORIZONTES NORTE</td>
+        <td style="padding: 0.75rem;">EL CODITO</td>
+        <td style="padding: 0.75rem;">el.codito@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">EL TOBERIN</td>
+        <td style="padding: 0.75rem;">TOBERIN</td>
+        <td style="padding: 0.75rem;">toberin@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">LA PRADERA NORTE</td>
+        <td style="padding: 0.75rem;">BABILONIA</td>
+        <td style="padding: 0.75rem;">babilonia@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">LAS ORQUIDEAS</td>
+        <td style="padding: 0.75rem;">LAS ORQUIDEAS</td>
+        <td style="padding: 0.75rem;">las.orquideas@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">BUENAVISTA</td>
+        <td style="padding: 0.75rem;">NUEVO HORIZONTE</td>
+        <td style="padding: 0.75rem;">nuevo.horizonte@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">BUENAVISTA II SECTOR</td>
+        <td style="padding: 0.75rem;">BUENAVISTA</td>
+        <td style="padding: 0.75rem;">buenavista@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">LA ESTRELLITA I</td>
+        <td style="padding: 0.75rem;">HORIZONTE</td>
+        <td style="padding: 0.75rem;">horizonte@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">TORCA</td>
+        <td style="padding: 0.75rem;">TORCA</td>
+        <td style="padding: 0.75rem;">torca@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">BUENAVISTA</td>
+        <td style="padding: 0.75rem;">COLEGIO LA ESTRELLITA (IED) - SEDE PRINCIPAL</td>
+        <td style="padding: 0.75rem;">la.estrellita@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL - ADMINISTRACION CONTRATADA</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">SAN ANTONIO NOROCCIDENTAL</td>
+        <td style="padding: 0.75rem;">SALUDCOOP NORTE</td>
+        <td style="padding: 0.75rem;">saludcoop.norte@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">ESCUELA DE INFANTERIA</td>
+        <td style="padding: 0.75rem;">COLEGIO DE BACHILLERATO PATRIA</td>
+        <td style="padding: 0.75rem;">patria@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO - REGIMEN ESPECIAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">TIBABITA</td>
+        <td style="padding: 0.75rem;">FUNDACION LA ENSEÑANZA</td>
+        <td style="padding: 0.75rem;">la.ensenanza@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">S.C. LA CAROLINA</td>
+        <td style="padding: 0.75rem;">INSTITUTO PEDAGOGICO NACIONAL</td>
+        <td style="padding: 0.75rem;">instituto.pedagogico.nacional@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">OFICIAL - REGIMEN ESPECIAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">LA CAROLINA</td>
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">usaquen@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">LOS CEDROS ORIENTAL</td>
+        <td style="padding: 0.75rem;">LOS CEDRITOS</td>
+        <td style="padding: 0.75rem;">los.cedritos@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">EL ROCIO NORTE</td>
+        <td style="padding: 0.75rem;">PILOTO DE APLICACION</td>
+        <td style="padding: 0.75rem;">piloto.aplicacion@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">TIBABITA</td>
+        <td style="padding: 0.75rem;">SANTA CLAUDIA</td>
+        <td style="padding: 0.75rem;">santa.claudia@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">SAN CRISTOBAL NORTE</td>
+        <td style="padding: 0.75rem;">PILOTO BAVARIA</td>
+        <td style="padding: 0.75rem;">piloto.bavaria@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">SAN CRISTOBAL NORTE</td>
+        <td style="padding: 0.75rem;">DIVINO MAESTRO</td>
+        <td style="padding: 0.75rem;">divino.maestro@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">SAN CRISTOBAL NORTE</td>
+        <td style="padding: 0.75rem;">SAN CRISTOBAL NORTE</td>
+        <td style="padding: 0.75rem;">san.cristobal.norte@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">SAN CRISTOBAL NORTE 2</td>
+        <td style="padding: 0.75rem;">CRISTOBAL COLON</td>
+        <td style="padding: 0.75rem;">cristobal.colon@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">BOSQUE DE PINOS</td>
+        <td style="padding: 0.75rem;">SANTA CECILIA BAJA</td>
+        <td style="padding: 0.75rem;">santa.cecilia.baja@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">SORATAMA</td>
+        <td style="padding: 0.75rem;">SORATAMA</td>
+        <td style="padding: 0.75rem;">soratama@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">BARRANCAS NORTE</td>
+        <td style="padding: 0.75rem;">GENERAL SANTANDER</td>
+        <td style="padding: 0.75rem;">general.santander@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">OFICIAL</td>
+        <td style="padding: 0.75rem;">DISTRITAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">LAS MARGARITAS</td>
+        <td style="padding: 0.75rem;">COLEGIO COLSUBSIDIO NORTE</td>
+        <td style="padding: 0.75rem;">colsubsidio.norte@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">SANTA TERESA</td>
+        <td style="padding: 0.75rem;">FUNDACION COLEGIO CLARA CASAS MORALES</td>
+        <td style="padding: 0.75rem;">clara.casas.morales@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">LAS GRANJAS DEL NORTE</td>
+        <td style="padding: 0.75rem;">COLEGIO EUCARISTICO</td>
+        <td style="padding: 0.75rem;">eucaristico@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">LA URIBE</td>
+        <td style="padding: 0.75rem;">COLEGIO CALASANZ</td>
+        <td style="padding: 0.75rem;">calasanz@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">SAN CRISTOBAL NORTE</td>
+        <td style="padding: 0.75rem;">COLEGIO JOSE MANUEL MARROQUIN</td>
+        <td style="padding: 0.75rem;">jose.manuel.marroquin@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">LA CALERA</td>
+        <td style="padding: 0.75rem;">ESCUELA PEDAGOGICA EXPERIMENTAL</td>
+        <td style="padding: 0.75rem;">escuela.pedagogica.experimental@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">BELLA SUIZA</td>
+        <td style="padding: 0.75rem;">CENTRO CULTURAL Y EDUCATIVO REYES CATOLICOS</td>
+        <td style="padding: 0.75rem;">reyes.catolicos@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO - REGIMEN ESPECIAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">SAN CRISTOBAL NORTE</td>
+        <td style="padding: 0.75rem;">CENTRO SANTA MARIA</td>
+        <td style="padding: 0.75rem;">santa.maria@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">SAN CRISTOBAL NORTE</td>
+        <td style="padding: 0.75rem;">COLEGIO FUNDACION LA PAZ</td>
+        <td style="padding: 0.75rem;">la.paz@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">SANTA BIBIANA</td>
+        <td style="padding: 0.75rem;">JARDIN INFANTIL MI PATO CUA CUA</td>
+        <td style="padding: 0.75rem;">mi.pato.cua.cua@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">BARRANCAS NORTE</td>
+        <td style="padding: 0.75rem;">LICEO ALTA BLANCA</td>
+        <td style="padding: 0.75rem;">alta.blanca@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">ESTRELLA DEL NORTE</td>
+        <td style="padding: 0.75rem;">JARDIN INFANTIL PEQUEÑOS ENCANTOS</td>
+        <td style="padding: 0.75rem;">pequenos.encantos@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">SANTA ANA</td>
+        <td style="padding: 0.75rem;">JARDIN INFANTIL Y GUARDERIA COLORIN COLORAN</td>
+        <td style="padding: 0.75rem;">colorin.coloran@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO - REGIMEN ESPECIAL</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">TIBABITA I</td>
+        <td style="padding: 0.75rem;">LICEO PSICOPEDAGOGICO TIBABITA</td>
+        <td style="padding: 0.75rem;">tibabita@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">TIBABITA II</td>
+        <td style="padding: 0.75rem;">COLEGIO ANEXO SAN FRANCISCO DE ASIS</td>
+        <td style="padding: 0.75rem;">san.francisco.asisi@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">EL TOBERIN</td>
+        <td style="padding: 0.75rem;">JARDIN INFANTIL EL RINCON DEL TERCER PUENTE</td>
+        <td style="padding: 0.75rem;">rincon.tercer.puente@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">CEDRITOS</td>
+        <td style="padding: 0.75rem;">COLEGIO PENSAR ANDINO</td>
+        <td style="padding: 0.75rem;">pensar.andino@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">SAN JUAN BOSCO</td>
+        <td style="padding: 0.75rem;">GIMNASIO MARROQUIN CAMPESTRE</td>
+        <td style="padding: 0.75rem;">marroquin.campestre@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">BARRANCAS NORTE</td>
+        <td style="padding: 0.75rem;">COLEGIO MARCO AURELIO NUMERIANO</td>
+        <td style="padding: 0.75rem;">marco.aurelio.numeriano@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+    
+    <tr style="border-top: 1px solid #e5e7eb;">
+        <td style="padding: 0.75rem;">USAQUEN</td>
+        <td style="padding: 0.75rem;">ESTRELLA DEL NORTE</td>
+        <td style="padding: 0.75rem;">COLEGIO WESLEYANO DEL NORTE</td>
+        <td style="padding: 0.75rem;">wesleyano.norte@edudata.edu.co</td>
+        <td style="padding: 0.75rem;">NO OFICIAL</td>
+        <td style="padding: 0.75rem;">PRIVADO</td>
+        <td style="padding: 0.75rem;">ANTIGUO ACTIVO</td>
+        <td style="padding: 0.75rem;">
+            <button class="cta-secondary" disabled>Ver datos</button>
+        </td>
+    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
         </div>
-      </header>
 
-      <section>
-        <h2 style="margin-bottom: 1rem;">Instituciones Registradas</h2>
-        <div class="card" style="overflow-x: auto;">
-          <table style="width: 100%; border-collapse: collapse;">
-            <thead>
-              <tr style="background-color: #f3f4f6;">
-                <th style="text-align: left; padding: 0.75rem;">Nombre</th>
-                <th style="text-align: left; padding: 0.75rem;">Región</th>
-                <th style="text-align: left; padding: 0.75rem;">Correo</th>
-                <th style="text-align: left; padding: 0.75rem;">Último ingreso</th>
-                <th style="text-align: left; padding: 0.75rem;">Acción</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-top: 1px solid #e5e7eb;">
-                <td style="padding: 0.75rem;">Gustavo Restrepo IED</td>
-                <td style="padding: 0.75rem;">Andina</td>
-                <td style="padding: 0.75rem;">gustavo.restrepo@edudata.edu.co</td>
-                <td style="padding: 0.75rem;">2024-06-22</td>
-                <td style="padding: 0.75rem;">
-                  <button class="cta-secondary" onclick="verInstitucion('gustavo.restrepo@edudata.edu.co')">
-                    Ver datos
-                  </button>
-                </td>
-              </tr>
-              <!-- Más instituciones -->
-              <tr style="border-top: 1px solid #e5e7eb;">
-                <td style="padding: 0.75rem;">Colegio Santa María</td>
-                <td style="padding: 0.75rem;">Caribe</td>
-                <td style="padding: 0.75rem;">santamaria@edudata.edu.co</td>
-                <td style="padding: 0.75rem;">2024-06-21</td>
-                <td style="padding: 0.75rem;">
-                  <button class="cta-secondary" disabled>
-                    Ver datos
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-    </main>
-  </div>
+        <script>
+            function logout() {
+                localStorage.clear();
+                window.location.href = "index.html";
+            }
 
-  <script>
-    function logout() {
-      localStorage.clear();
-      window.location.href = 'index.html';
-    }
+            const role = localStorage.getItem("userRole");
+            const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+            if (!isLoggedIn || role !== "admin") {
+                window.location.href = "index.html";
+            }
 
-    const role = localStorage.getItem("userRole");
-    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-    if (!isLoggedIn || role !== "admin") {
-      window.location.href = "index.html";
-    }
-
-    function verInstitucion(correo) {
-      // Redirige temporalmente al dashboard institucional (más adelante puede filtrar por institución)
-      window.open("dashboard_institucion.html", "_blank");
-    }
-  </script>
-</body>
+            function verInstitucion(correo) {
+                // Redirige temporalmente al dashboard institucional (más adelante puede filtrar por institución)
+                window.open("dashboard_institucion.html", "_blank");
+            }
+        </script>
+    </body>
 </html>
